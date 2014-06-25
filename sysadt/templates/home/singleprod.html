@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %} Catalogo de Productos {%endblock %}
+
+{%block content %}
+<br><img src="/media/{{producto.imagen}}"/>
+<p>{{producto.nombre}}</p>
+<p>{{producto.descripcion}}</p>
+<p>${{producto.precio}}</p>
+<p>Existencia:{{producto.stock}}</p>
+
+{% if producto.stock > 0 %}
+	<a href="#" class="btn btn-primary">comprar</a>
+{%endif%}
+<a href="javascript:windows.history.go(-1);" class="btn btn-primary">Regresar a la Lista</a>
+{% endblock %}
+

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{%block title %} Incio- Bienvenidos{% endblock %}
+{%block content%} 
+<section id='home'>
+	<br>ESta es  mi primera pagina en DJango 
+	{%if user.is_authenticated %}
+         <p>Bienvenido {{ user }} </p>
+         {% elif user.get_profile.photo %}
+         	<img src="{{MEDIA_URL}}{{user.get_profile.photo}}" width="100px" heigth="100px"/>
+    {% else %}
+        <a href="/login/" class="btn btn-primary">Login<a>
+    {% endif %}
+    
+</section>
+{% endblock %}
+

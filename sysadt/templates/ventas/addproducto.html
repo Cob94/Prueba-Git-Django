@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %} Añadir nuevo Producto {% endblock %}
+
+
+{% block content %}
+<form action="." method="POST" >
+	{% csrf_token%}
+	{{form.as_p}}
+	<input id="guardar" type="submit" value="Grabar">
+	<input type="reset" value="Limpiar">
+</form>
+<br>
+	{{ Informacion}}
+
+{% endblock %}
